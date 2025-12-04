@@ -260,7 +260,6 @@ Output: Path to a SUID-root shell if the exploit is successful.
 
 The complete technical analysis is available in:
 - [Medium Article](coming soon)
-- [PDF Download](LPE-Cron-Research-Full.pdf)
 
 #### Custom SUID-root Shell (rootbash)
 
