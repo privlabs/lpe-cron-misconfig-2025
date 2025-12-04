@@ -279,7 +279,7 @@ sudo ./tools/monitor-cron-changes.sh --check
 
 The complete technical analysis is available in:
 - [Medium Article](coming soon)
-- [PDF Download](./docs/LPE-Cron-Research-Full.pdf)
+- [PDF Download](LPE-Cron-Research-Full.pdf)
 
 #### Custom SUID-root Shell (rootbash)
 
@@ -340,7 +340,7 @@ These issues do not warrant individual CVE assignments as they represent configu
 
 ## 🤝 Contributing
 
-Contributions welcome! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+Contributions welcome! Please see  docs/CONTRIBUTING.md for guidelines.
 
 ### Areas for Contribution
 
