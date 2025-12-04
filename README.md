@@ -169,15 +169,20 @@ Successful exploitation enables:
 
 ---
 
-## 🛡️ Mitigation
+🛡️ Mitigation
+Immediate Actions
 
-### Immediate Actions
+1. Audit Current Cron Jobs
 
-#### 1. Audit Current Cron Jobs
-
-```bash
-# List all cron jobs system-wide
+# Run the audit script to detect common cron LPE misconfigurations:
 sudo ./tools/audit-cron.sh
+
+
+This script checks for two frequent cron privilege escalation scenarios:
+
+“john-cron” misconfiguration (world-writable directories used by cron jobs)
+
+PATH hijack via writable directories present in root’s PATH environment variable used in cron jobs
 ```
 
 #### 2. Fix Permissions
@@ -228,12 +233,12 @@ See [HARDENING.md](./docs/HARDENING.md) for comprehensive hardening guide includ
 
 This repository includes several security audit and exploitation tools:
 
-#### /tools/pre_check.sh
+#### /tools/audit-cron.sh
 Performs initial checks for cron job misconfigurations and potential privilege escalation vectors (world-writable paths, PATH hijack, etc.).
 
 **Usage:**
 ```sh
-bash ./tools/pre_check.sh
+bash ./tools/audit-cron.sh
 
 **Output**: Status message (vulnerable/not vulnerable).
 
