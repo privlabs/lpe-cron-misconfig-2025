@@ -226,49 +226,25 @@ See [HARDENING.md](./docs/HARDENING.md) for comprehensive hardening guide includ
 
 ## 🔧 Tools
 
-This repository includes several security audit tools:
+This repository includes several security audit and exploitation tools:
 
-### `/tools/audit-cron.sh`
+#### /tools/pre_check.sh
+Performs initial checks for cron job misconfigurations and potential privilege escalation vectors (world-writable paths, PATH hijack, etc.).
 
-Comprehensive cron security auditor that checks for:
-- World-writable script paths
-- Relative path usage
-- Insecure script ownership
-- Missing permission restrictions
-- Unsafe environment variable usage
+**Usage:**
+```sh
+bash ./tools/pre_check.sh
 
-**Usage**:
-```bash
-sudo ./tools/audit-cron.sh
-```
+**Output**: Status message (vulnerable/not vulnerable).
 
-**Output**: Detailed report with severity ratings and remediation suggestions.
+/tools/exploit.sh
 
-### `/tools/secure-cron-template.sh`
-
-Template for writing secure cron scripts with:
-- Secure temporary file creation
-- Input validation
-- Error handling
-- Logging best practices
+Proof-of-concept exploit script. If a misconfiguration is detected (e.g., world-writable cron directory), this script will drop a SUID shell in the vulnerable directory.
 
 **Usage**:
-```bash
-cp tools/secure-cron-template.sh /usr/local/sbin/your-script.sh
-# Edit and customize
-```
+sudo ./tools/exploit.sh
 
-### `/tools/monitor-cron-changes.sh`
-
-File integrity monitoring specifically for cron-related files.
-
-**Usage**:
-```bash
-# Initial baseline
-sudo ./tools/monitor-cron-changes.sh --init
-
-# Check for changes
-sudo ./tools/monitor-cron-changes.sh --check
+Output: Path to a SUID-root shell if the exploit is successful.
 ```
 
 ---
