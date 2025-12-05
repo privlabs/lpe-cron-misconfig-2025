@@ -232,7 +232,7 @@ See [HARDENING.md](./docs/HARDENING.md) for comprehensive hardening guide includ
 
 This repository includes several security audit and exploitation tools:
 
-### /tools/audit-cron.sh
+### [`tools/audit-cron.sh`](tools/audit-cron.sh)
 
 Performs initial checks for cron job misconfigurations and potential privilege escalation vectors (world-writable paths, PATH hijack, etc.).
 
@@ -243,7 +243,7 @@ bash ./tools/audit-cron.sh
 **Output**: Status message (vulnerable/not vulnerable).
 
 ```
-### /tools/exploit.sh
+### [tools/exploit.sh](tools/exploit.sh)
 
 Proof-of-concept exploit script. If a misconfiguration is detected (e.g., world-writable cron directory), this script will drop a SUID shell in the vulnerable directory.
 
