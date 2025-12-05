@@ -28,7 +28,7 @@ During the course of Linux privilege escalation research via cron job misconfigu
 - Remove and investigate any `rootbash` or similar files
 - Monitor for SUID-root file creation with OSSEC/AIDE
 
-**For more, see [Full LPE Research](./LPE-Cron-Research-Full.pdf) and [Detection Guide](./DETECTION.md).**
+**For more, see  [Detection Guide](./DETECTION.md).**
 
 ---
 
