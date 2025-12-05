@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pre_check.sh — détection LPE john-cron ou PATH hijack générique
+# audit-cron.sh — détection LPE john-cron ou PATH hijack générique
 
 set -euo pipefail
 
