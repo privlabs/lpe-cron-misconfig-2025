@@ -243,11 +243,12 @@ bash ./tools/audit-cron.sh
 **Output**: Status message (vulnerable/not vulnerable).
 
 ```
-####/tools/exploit.sh
+### /tools/exploit.sh
 
 Proof-of-concept exploit script. If a misconfiguration is detected (e.g., world-writable cron directory), this script will drop a SUID shell in the vulnerable directory.
 
-**Usage**:
+**Usage:**
+```
 sudo ./tools/exploit.sh
 
 Output: Path to a SUID-root shell if the exploit is successful.
